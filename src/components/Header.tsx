@@ -43,7 +43,7 @@ const Header: React.FC = () => {
     >
       <div className="mx-auto px-4 md:px-12 lg:px-20 py-4 flex justify-between items-center">
         <motion.a
-          href="#home"
+          href="/"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
