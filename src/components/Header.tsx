@@ -38,7 +38,7 @@ const Header: React.FC = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-dark-300 shadow-lg" : "bg-transparent"
+        scrolled || isOpen ? "bg-dark-300 shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="mx-auto px-4 md:px-12 lg:px-20 py-4 flex justify-between items-center">
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-primary-300 font-bold text-xl md:text-2xl"
         >
-          RK
+          Portfolio
         </motion.a>
 
         {/* Desktop Navigation */}

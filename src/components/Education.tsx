@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { education, languages } from '../data/portfolioData';
-import { BookOpen, Globe } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { education, languages } from "../data/portfolioData";
+import { BookOpen, Globe } from "lucide-react";
 
 const Education: React.FC = () => {
   const [ref, inView] = useInView({
@@ -25,12 +25,12 @@ const Education: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
+      transition: { duration: 0.6 },
     },
   };
 
   return (
-    <section id="education" className="py-20 bg-dark-300 text-white">
+    <section id="education" className="py-20 lg:px-20 bg-dark-300 text-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,14 +38,16 @@ const Education: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Education & Languages</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Education & Languages
+          </h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-4"></div>
           <p className="text-gray-400 max-w-xl mx-auto">
             My academic background and language proficiencies
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <motion.div
             ref={ref}
             variants={containerVariants}
@@ -57,7 +59,9 @@ const Education: React.FC = () => {
               <div className="bg-primary-700 p-3 rounded-full mr-4">
                 <BookOpen size={24} className="text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-primary-300">Education</h3>
+              <h3 className="text-2xl font-semibold text-primary-300">
+                Education
+              </h3>
             </div>
 
             {education.map((item, index) => (
@@ -83,7 +87,9 @@ const Education: React.FC = () => {
               <div className="bg-secondary-700 p-3 rounded-full mr-4">
                 <Globe size={24} className="text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-secondary-300">Languages</h3>
+              <h3 className="text-2xl font-semibold text-secondary-300">
+                Languages
+              </h3>
             </div>
 
             {languages.map((item, index) => (
@@ -98,8 +104,11 @@ const Education: React.FC = () => {
                     {item.proficiency}
                   </span>
                 </div>
-                <div className="w-full bg-dark-400 rounded-full h-2.5">
-                  <div className="bg-gradient-to-r from-secondary-500 to-secondary-300 h-2.5 rounded-full w-full"></div>
+                <div className="w-full bg-dark-200 rounded-full h-2.5">
+                  <div
+                    className="bg-gradient-to-r from-secondary-500 to-secondary-300 h-2.5 rounded-full"
+                    style={{ width: `${item.percentage}%` }}
+                  ></div>
                 </div>
               </motion.div>
             ))}

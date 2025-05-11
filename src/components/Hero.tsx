@@ -95,7 +95,7 @@ const Hero: React.FC = () => {
                   href={`tel:${personalInfo.contact.phone}`}
                   className="hover:text-primary-300 transition-colors duration-300"
                 >
-                  {personalInfo.contact.phone}
+                  +91 {personalInfo.contact.phone}
                 </a>
               </div>
             </motion.div>

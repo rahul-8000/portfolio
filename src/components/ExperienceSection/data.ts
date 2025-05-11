@@ -27,7 +27,7 @@ export const statistics: StatisticItem[] = [
     label: "Projects Completed"
   },
   {
-    value: "3+",
+    value: "5+",
     label: "Years Experience"
   },
   {

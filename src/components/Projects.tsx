@@ -25,17 +25,21 @@ const Projects: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
+      transition: { duration: 0.6 },
     },
   };
 
   return (
-    <section id="projects" className="py-20 bg-dark-200 text-white">
+    <section id="projects" className="py-20 lg:px-20 bg-dark-200 text-white">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          ref={ref}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+          }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
@@ -46,27 +50,28 @@ const Projects: React.FC = () => {
         </motion.div>
 
         <motion.div
-          ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          animate={inView ? 'visible' : 'hidden'}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.id || index}
               variants={itemVariants}
               className="bg-dark-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
             >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
+              <div className="h-60 overflow-hidden">
+                <img
+                  src={project.image || '/fallback.jpg'}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-primary-300">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-primary-300">
+                  {project.title}
+                </h3>
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 {project.link && (
                   <a

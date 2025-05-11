@@ -37,19 +37,22 @@ export const projects: ProjectItem[] = [
     title: "Taxonation",
     description: "A tax, legal, and finance portal.",
     link: "https://taxonation.com",
-    image: "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "/taxonation.jpg",
+    id: 0
   },
   {
     title: "Apply Store",
     description: "AI-powered course discovery portal with 8000+ courses.",
     link: "https://applystore.org",
-    image: "https://images.pexels.com/photos/5428012/pexels-photo-5428012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "/applystore.jpg",
+    id: 1
   },
   {
     title: "Stegback Portal",
     description: "Multi-vendor e-commerce system with role-based access, product listing, order management, shipping integrations.",
     link: "https://portal.stegback.com",
-    image: "https://images.pexels.com/photos/38296/cycling-bicycle-riding-sport-38296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "/stegback.png",
+    id: 2
   }
 ];
 
@@ -64,7 +67,7 @@ export const skills: SkillCategory[] = [
   },
   {
     category: "Databases",
-    skills: ["MySQL"]
+    skills: ["MySQL", "MongoDB"]
   },
   {
     category: "Tools",
@@ -83,10 +86,12 @@ export const education: EducationItem[] = [
 export const languages: LanguageItem[] = [
   {
     language: "Hindi",
-    proficiency: "Full Professional"
+    proficiency: "Full Professional",
+    percentage: 100 
   },
   {
     language: "English",
-    proficiency: "Full Professional"
+    proficiency: "Conversational",
+    percentage: 90
   }
 ];

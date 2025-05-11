@@ -6,6 +6,7 @@ export interface ExperienceItem {
 }
 
 export interface ProjectItem {
+  id: number;
   title: string;
   description: string;
   link?: string;
@@ -24,6 +25,7 @@ export interface EducationItem {
 }
 
 export interface LanguageItem {
+  percentage: any;
   language: string;
   proficiency: string;
 }
