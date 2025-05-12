@@ -2,7 +2,7 @@ import { ExperienceItem, ProjectItem, SkillCategory, EducationItem, LanguageItem
 
 export const personalInfo = {
   name: "Rahul Kumawat",
-  title: "PHP Laravel Developer",
+  title: "PHP Laravel & MERN Stack Developer",
   description: "I’m a tech lover who enjoys solving problems and building new, creative things.",
   contact: {
     email: "rk9680005509@gmail.com",
