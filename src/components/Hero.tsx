@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
                 Contact Me
               </a>
               <a
-                href="/rahul.pdf"
+                href="/rahul_kumawat.pdf"
                 download
                 className="bg-transparent hover:bg-primary-900 text-primary-300 border border-primary-600 py-3 px-6 rounded-md transition-colors duration-300 text-center"
               >
